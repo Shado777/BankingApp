@@ -22,7 +22,7 @@ public class registration extends AppCompatActivity {
     SQLiteOpenHelper dbHelper;
     SQLiteDatabase database;
 
-    //BankUser myDb;
+    BankUser myDb;
     Button btnReg;
     TextView txt;
     EditText userPassR,userNameR,userLastR,userEmailR,userMobileR;
@@ -96,16 +96,16 @@ public class registration extends AppCompatActivity {
                 }
                 //Adding to database
                 else {
-                    /*
+
                     boolean isInserted = myDb.addUser(email,name,surname,mobile,btnRadR,curSav,savAcc,pass);
-                    if(isInserted == true){*/
+                    if(isInserted == true) {
                         Toast toast = Toast.makeText(getApplicationContext(), "Added to database ", Toast.LENGTH_SHORT);
                         toast.show();
-                    /*}
+                    }
                     else{
-                        Toast toast = Toast.makeText(getApplicationContext(), "No connection ", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }*/
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "No connection ", Toast.LENGTH_SHORT);
+                        toast2.show();
+                    }
                 }
             }
         });
