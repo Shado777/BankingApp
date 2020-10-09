@@ -1,6 +1,8 @@
 package com.example.sisonkebank;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -17,7 +19,10 @@ import java.util.regex.Pattern;
 
 public class registration extends AppCompatActivity {
 
-    BankUser myDb;
+    SQLiteOpenHelper dbHelper;
+    SQLiteDatabase database;
+
+    //BankUser myDb;
     Button btnReg;
     TextView txt;
     EditText userPassR,userNameR,userLastR,userEmailR,userMobileR;
@@ -28,6 +33,12 @@ public class registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
+
+        // Instantiate dbhelper
+        dbHelper = new BankUser(this);
+
+        //reference database
+        database = dbHelper.getWritableDatabase();
 
         //Pointing attributes
         userPassR = (EditText)findViewById(R.id.fldPasw);
@@ -85,15 +96,16 @@ public class registration extends AppCompatActivity {
                 }
                 //Adding to database
                 else {
+                    /*
                     boolean isInserted = myDb.addUser(email,name,surname,mobile,btnRadR,curSav,savAcc,pass);
-                    if(isInserted == true){
+                    if(isInserted == true){*/
                         Toast toast = Toast.makeText(getApplicationContext(), "Added to database ", Toast.LENGTH_SHORT);
                         toast.show();
-                    }
+                    /*}
                     else{
                         Toast toast = Toast.makeText(getApplicationContext(), "No connection ", Toast.LENGTH_SHORT);
                         toast.show();
-                    }
+                    }*/
                 }
             }
         });
