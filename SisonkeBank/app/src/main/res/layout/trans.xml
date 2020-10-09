@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Trans">
+
+    <TextView
+        android:id="@+id/lbTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transfer to/from Accounts"
+        android:textColor="#025863"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="348dp"
+        android:layout_height="554dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694">
+
+        <TextView
+            android:id="@+id/lbCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:text="Current Account Balance: R"
+            app:layout_constraintBottom_toTopOf="@+id/lbSavings"
+            app:layout_constraintEnd_toStartOf="@+id/current1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/current1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="104dp"
+            android:layout_marginRight="104dp"
+            android:layout_marginBottom="32dp"
+            android:text="5000"
+            app:layout_constraintBottom_toTopOf="@+id/savings1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/savings1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="104dp"
+            android:layout_marginRight="104dp"
+            android:text="2000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current1" />
+
+        <TextView
+            android:id="@+id/lbSavings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginBottom="32dp"
+            android:text="Savings Account Balance: R"
+            app:layout_constraintBottom_toTopOf="@+id/lbAmount"
+            app:layout_constraintEnd_toStartOf="@+id/savings1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbCurrent" />
+
+        <TextView
+            android:id="@+id/lbAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginRight="162dp"
+            android:layout_marginBottom="32dp"
+            android:text="Enter Transfer Amount: R"
+            app:layout_constraintBottom_toTopOf="@+id/lbFrom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbSavings" />
+
+        <TextView
+            android:id="@+id/lbFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:text="Transfer from:"
+            app:layout_constraintEnd_toStartOf="@+id/choise1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbAmount" />
+
+        <EditText
+            android:id="@+id/fldAmount"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/choise1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintStart_toEndOf="@+id/lbAmount"
+            app:layout_constraintTop_toBottomOf="@+id/savings1"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Spinner
+            android:id="@+id/choise1"
+            android:layout_width="153dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fldAmount" />
+
+        <Button
+            android:id="@+id/btnTransfer"
+            android:layout_width="261dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="44dp"
+            android:background="#025863"
+            android:clickable="true"
+            android:text="Transfer"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbFrom"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
