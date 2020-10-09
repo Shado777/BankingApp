@@ -22,6 +22,7 @@ public class registration extends AppCompatActivity {
     TextView txt;
     EditText userPassR,userNameR,userLastR,userEmailR,userMobileR;
     RadioGroup rgR;
+    RadioButton rgB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +63,8 @@ public class registration extends AppCompatActivity {
 
                 //Radio Button
                 int selected = rgR.getCheckedRadioButtonId();
-                RadioButton btnRad = (RadioButton)findViewById(selected);
-                String btnRadR = btnRad.getText().toString();
+                rgB = (RadioButton)findViewById(selected);
+                String btnRadR = rgB.getText().toString();
 
                 //Checking if fields are empty
                 if(pass.isEmpty() || name.isEmpty() || surname.isEmpty() || email.isEmpty() || mobile.isEmpty()) {

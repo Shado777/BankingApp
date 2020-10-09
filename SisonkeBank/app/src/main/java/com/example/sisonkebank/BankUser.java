@@ -24,13 +24,13 @@ public class BankUser extends SQLiteOpenHelper {
 
 
     public BankUser(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 2);
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        //String queryDel = "DROP TABLE "+TABLE_NAME;
         String query1 = "CREATE TABLE "+TABLE_NAME+"(Email VARCHAR(100) PRIMARY KEY,cName VARCHAR(50),cSurname VARCHAR(50),cMobile VARCHAR(12),cGender VARCHAR(20),Current_Account double,Savings_Account double,cPassword VARCHAR(50))";
         db.execSQL(query1);
     }
